@@ -1,6 +1,6 @@
-package com.zhangj.ymm.design_pattern.builder;
+package com.zhangj.ymm.thread.builder;
 
-import com.zhangj.ymm.design_pattern.builder.User.*;
+import com.zhangj.ymm.thread.builder.User.*;
 
 import java.util.Date;
 

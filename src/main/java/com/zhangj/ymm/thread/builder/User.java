@@ -1,4 +1,4 @@
-package com.zhangj.ymm.design_pattern.builder;
+package com.zhangj.ymm.thread.builder;
 
 
 import lombok.Data;

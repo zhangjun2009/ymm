@@ -1,4 +1,4 @@
-package com.zhangj.ymm.design_pattern.singleton_thread;
+package com.zhangj.ymm.thread.singleton_thread;
 
 /**
  * @author zhangj
