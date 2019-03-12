@@ -1,4 +1,4 @@
-package com.zhangj.ymm.thread.read_write_lock;
+package com.zhangj.ymm.thread.part2.read_write_lock;
 
 /**
  * @author zhangj

@@ -1,6 +1,4 @@
-package com.zhangj.ymm.thread.builder;
-
-import com.zhangj.ymm.thread.builder.User.*;
+package com.zhangj.ymm.thread.part2.builder;
 
 import java.util.Date;
 
@@ -10,7 +8,7 @@ import java.util.Date;
  */
 public class BuildTest {
     public static void main(String[] args) {
-        User user = new Builder("zhangj", 12, "nanjing").birthday(new Date()).build();
+        User user = new User.Builder("zhangj", 12, "nanjing").birthday(new Date()).build();
         System.out.println(user);
     }
 }
