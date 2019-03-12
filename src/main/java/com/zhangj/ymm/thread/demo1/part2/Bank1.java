@@ -1,4 +1,4 @@
-package com.zhangj.ymm.thread.part1.part2;
+package com.zhangj.ymm.thread.demo1.part2;
 
 /**
  * @author zhangj

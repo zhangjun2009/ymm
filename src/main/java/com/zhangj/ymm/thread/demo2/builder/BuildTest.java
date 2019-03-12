@@ -1,4 +1,4 @@
-package com.zhangj.ymm.thread.part2.builder;
+package com.zhangj.ymm.thread.demo2.builder;
 
 import java.util.Date;
 

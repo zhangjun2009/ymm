@@ -1,4 +1,4 @@
-package com.zhangj.ymm.thread.part2.singleton_thread;
+package com.zhangj.ymm.thread.demo2.singleton_thread;
 
 
 /**
