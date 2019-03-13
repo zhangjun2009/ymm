@@ -18,7 +18,7 @@ public class TicketWindow2 implements Runnable {
     private int index = 1;
 
     @Override
-    public synchronized void run() {
+    public void run() {
         while (index <= MAX) {
             try {
                 TimeUnit.SECONDS.sleep(1);
