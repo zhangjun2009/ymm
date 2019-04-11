@@ -1,4 +1,4 @@
-package com.zhangj.ymm.thread.juc.utils;
+package com.zhangj.ymm.thread.juc.utils.countdownlatch;
 
 import java.util.concurrent.CountDownLatch;
 
