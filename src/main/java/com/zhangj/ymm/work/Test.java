@@ -6,8 +6,21 @@ package com.zhangj.ymm.work;
  */
 public class Test {
     public static void main(String[] args) {
-        System.out.println(OptType.isExistOptType(1));
-
+        int a = 1;
+        switch (a) {
+            case 1:
+                System.out.println("1");
+                break;
+            case 2:
+                System.out.println("2");
+                break;
+            case 3:
+                System.out.println("3");
+                break;
+            default:
+                System.out.println("default");
+                break;
+        }
     }
 
     static class User {
