@@ -1,59 +1,39 @@
 package com.zhangj.ymm.work;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.annotation.JSONField;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
+
 /**
  * @author zhangj
  * @date 2019/3/15
  */
 public class Test {
     public static void main(String[] args) {
-        int a = 1;
-        switch (a) {
-            case 1:
-                System.out.println("1");
-                break;
-            case 2:
-                System.out.println("2");
-                break;
-            case 3:
-                System.out.println("3");
-                break;
-            default:
-                System.out.println("default");
-                break;
-        }
+        User user = new User(1, "libai");
+        String jsonString = JSON.toJSONString(user);
+        System.out.println(jsonString);
+
+        String str = "{\"s_id\":1,\"user_name\":\"libai\"}";
+        User object = JSON.parseObject(str, User.class);
+        System.out.println(object);
     }
 
-    static class User {
-        private Integer id1;
-        private Integer id2;
+    @Data
+    @Accessors(fluent = true)
+    @AllArgsConstructor
+    @Builder
+    @NoArgsConstructor
+    public static class User {
+        @JSONField(name = "s_id")
+        private int sId;
 
-        @Override
-        public String toString() {
-            return "User{" +
-                    "id1=" + id1 +
-                    ", id2=" + id2 +
-                    '}';
-        }
-
-        public User(Integer id1, Integer id2) {
-            this.id1 = id1;
-            this.id2 = id2;
-        }
-
-        public Integer getId1() {
-            return id1;
-        }
-
-        public void setId1(Integer id1) {
-            this.id1 = id1;
-        }
-
-        public Integer getId2() {
-            return id2;
-        }
-
-        public void setId2(Integer id2) {
-            this.id2 = id2;
-        }
+        @JSONField(name = "user_name")
+        private String userName;
     }
+
 }
