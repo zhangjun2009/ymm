@@ -16,6 +16,17 @@ public class MyCycleQueue2 {
     public static void main(String[] args) {
         MyCycleQueue2 queue = new MyCycleQueue2(3);
         System.out.println(queue.add(1));
+        System.out.println(queue.add(2));
+        System.out.println(queue.add(3));
+        System.out.println("isEmpty:" + queue.isEmpty());
+        System.out.println("isFull:" + queue.isFull());
+        System.out.println("size:" + queue.size());
+        Arrays.stream(queue.value).forEach(System.out::println);
+        System.out.println("=======================================");
+        System.out.println(queue.remove());
+        System.out.println(queue.remove());
+        System.out.println(queue.remove());
+        System.out.println(queue.add(4));
         System.out.println("isEmpty:" + queue.isEmpty());
         System.out.println("isFull:" + queue.isFull());
         System.out.println("size:" + queue.size());
@@ -50,6 +61,23 @@ public class MyCycleQueue2 {
                 rear++;
             }
             return true;
+        }
+    }
+
+    public Integer remove() {
+        Integer temp = null;
+        if (isEmpty()) {
+            return temp;
+        } else {
+            count--;
+            temp = value[front];
+            value[front] = null;
+            if (front == value.length - 1) {
+                front = 0;
+            } else {
+                front++;
+            }
+            return temp;
         }
     }
 }
