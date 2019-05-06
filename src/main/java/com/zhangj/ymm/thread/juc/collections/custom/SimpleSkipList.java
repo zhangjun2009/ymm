@@ -1,4 +1,4 @@
-package com.zhangj.ymm.thread.juc.collections;
+package com.zhangj.ymm.thread.juc.collections.custom;
 
 import java.util.Random;
 
