@@ -10,9 +10,21 @@ public class ArrayBlockingQueueExample {
     public static void main(String[] args) throws InterruptedException {
 //        testAddNotExceedCapacity();
 //        testOffer();
-//        testPut();
+        testPut();
 //        testPeek();
-        testPool();
+//        testPool();
+    }
+
+    private static void testPut() throws InterruptedException {
+        ArrayBlockingQueue<String> queue = create(3);
+        queue.put("1");
+        queue.put("2");
+        //queue.put("3");
+        if (queue.remainingCapacity() > 0) {
+            System.out.println("111");
+        }
+        queue.put("4");
+        queue.stream().forEach(System.out::println);
     }
 
     private static void testPool() throws InterruptedException {
@@ -39,14 +51,6 @@ public class ArrayBlockingQueueExample {
         System.out.println(queue.peek());
     }
 
-    private static void testPut() throws InterruptedException {
-        ArrayBlockingQueue<String> queue = create(3);
-        queue.put("1");
-        queue.put("2");
-        queue.put("3");
-        queue.put("4");
-        queue.stream().forEach(System.out::println);
-    }
 
     private static void testOffer() {
         ArrayBlockingQueue<String> queue = create(3);
