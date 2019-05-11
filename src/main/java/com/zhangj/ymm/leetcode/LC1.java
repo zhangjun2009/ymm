@@ -6,8 +6,10 @@ import java.util.stream.IntStream;
 /**
  * @author zhangj
  * @date 2019/5/8
+ * @see <a>https://leetcode-cn.com/problems/two-sum/</a>
  */
 public class LC1 {
+
     public static void main(String[] args) {
         int[] array = new int[10000000];
         IntStream.range(0, 10000000).forEach(i -> array[i] = i);

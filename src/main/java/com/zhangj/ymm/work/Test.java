@@ -1,5 +1,6 @@
 package com.zhangj.ymm.work;
 
+import cn.hutool.core.util.HashUtil;
 import com.alibaba.fastjson.annotation.JSONField;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,34 +8,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.io.UnsupportedEncodingException;
 import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.stream.IntStream;
 
 /**
  * @author zhangj
  * @date 2019/3/15
  */
 public class Test {
-    public static void main(String[] args) throws InterruptedException {
-        ExecutorService executorService = Executors.newFixedThreadPool(10, new MyThread());
-        IntStream.range(0, 10).forEach(i -> executorService.execute(new MyTask(i) {
-            @Override
-            protected void doErrors(Exception e) {
-                System.out.println(Thread.currentThread().getName() + " ,The no=" + i + " is error");
-            }
-
-            @Override
-            protected void doExecute() {
-                int temp = i / 0;
-            }
-        }));
-        executorService.shutdown();
-        executorService.awaitTermination(1, TimeUnit.HOURS);
-        System.out.println("=========================");
+    public static void main(String[] args) throws InterruptedException, UnsupportedEncodingException {
+        System.out.println(HashUtil.bkdrHash("1222"));
     }
 
     private static class MyThread implements ThreadFactory {
