@@ -119,10 +119,57 @@ public class DoubleLink<T> {
         Node<T> node = getNode(index);
         Node<T> tNode = new Node<>(t, node.prev, node);
         node.prev.next = tNode;
-        node.next=node;
+        node.next = node;
         count++;
     }
 
+    /**
+     * 将节点插入第一个节点处
+     *
+     * @param t
+     */
+    public void insertFirst(T t) {
+        insert(0, t);
+    }
+
+    /**
+     * 将节点追加到链表的末尾
+     *
+     * @param t 值
+     */
+    public void appendLast(T t) {
+        Node<T> tNode = new Node<>(t, head.prev, head);
+        head.prev.next = tNode;
+        head.prev = tNode;
+        count++;
+    }
+
+    /**
+     * 删除index位置的节点
+     *
+     * @param index 位置
+     */
+    public void del(int index) {
+        Node<T> node = getNode(index);
+        node.prev.next = node.next;
+        node.next.prev = node.prev;
+        node = null;
+        count--;
+    }
+
+    /**
+     * 删除第一个节点
+     */
+    public void deleteFirst() {
+        del(0);
+    }
+
+    /**
+     * 删除最后一个节点
+     */
+    public void deleteLast() {
+        del(count - 1);
+    }
 
 
     public class Node<T> {
