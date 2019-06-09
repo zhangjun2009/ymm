@@ -1,9 +1,9 @@
 package com.zhangj.ymm.jdk;
 
+import com.google.common.collect.Lists;
+
 import java.util.HashMap;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.List;
 
 /**
  * @author zhangj
@@ -11,12 +11,12 @@ import java.util.concurrent.Future;
  */
 public class VoidTest {
     public static void main(String[] args) {
-        use2();
+        use1();
     }
 
     private static void use1() {
-        ExecutorService executorService = Executors.newSingleThreadExecutor();
-        Future<Void> submit = executorService.submit(() -> null);
+        List<String> list = Lists.newArrayList("11".split(","));
+        System.out.println(list);
     }
 
     private static void use2() {

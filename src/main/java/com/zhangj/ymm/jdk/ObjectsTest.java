@@ -8,13 +8,20 @@ import java.util.Optional;
  * @date 2019/4/26
  */
 public class ObjectsTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IllegalAccessException, InstantiationException, ClassNotFoundException {
         //equalsTest();
         //deepEqualsTest();
         //hashCodeTest();
         //toStringDefault();
         //compareTest();
-        requireNonNullTest();
+        //requireNonNullTest();
+        create();
+    }
+
+    private static Objects create() throws ClassNotFoundException, IllegalAccessException, InstantiationException {
+        Class<?> clazz = Class.forName("java.util.Objects");
+        Objects o = (Objects) clazz.newInstance();
+        return o;
     }
 
     private static void requireNonNullTest() {
