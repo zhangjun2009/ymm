@@ -64,7 +64,7 @@ public class LRUBaseLinkedList<T> {
      */
     public void deleteNode(SNode node) {
         SNode temp = node.getNext();
-        node.setNext(temp);
+        node.setNext(temp.getNext());
         length--;
     }
 
