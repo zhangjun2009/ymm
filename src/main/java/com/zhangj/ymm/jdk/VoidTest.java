@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class VoidTest {
     public static void main(String[] args) {
-        use1();
+        use2();
     }
 
     private static void use1() {
